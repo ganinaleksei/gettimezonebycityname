@@ -1,0 +1,8 @@
+var getTimeZoneByCityName = require('getTimeZoneByCityName')({
+	googleapisKey: ""
+});
+
+(async () => {
+  var e = await getTimeZoneByCityName.getTimeZoneByCityName("Нижний Новгород");
+  console.log(e);
+})();
