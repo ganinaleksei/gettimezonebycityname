@@ -1,6 +1,4 @@
-const async = require('async');
 const r2 = require('r2');
-//var request = require('request');
 
 module.exports = function(config){
 	return {
@@ -17,11 +15,9 @@ module.exports = function(config){
 				location.lng = latlng[0];
 				location.lat = latlng[1];
 			} catch (err){
-				throw "geocode-maps.yandex.ru error";
+				throw new Error(err);
 			}
-			
-			console.log("location:", location);
-			
+                
 			try {
 				const googleUrl = "https://maps.googleapis.com/maps/api/timezone/json?location=" + location.lat + "," + location.lng + "&timestamp=" + (Date.now() / 1000) + "&key=" + config.googleapisKey;
 				const googleResp = await r2(
@@ -29,7 +25,7 @@ module.exports = function(config){
 				).json;
 				return googleResp.timeZoneId;
 			} catch (err) {
-				throw "maps.googleapis.com error";
+                throw new Error(err);
 			}
 		}
 	};

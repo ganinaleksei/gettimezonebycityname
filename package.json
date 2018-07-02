@@ -9,9 +9,7 @@
   "author": "Ganin Aleksei",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.6.1",
-    "mocha": "^5.2.0",
     "r2": "^2.0.1",
-    "request": "^2.87.0"
+    "mocha": "^5.2.0"
   }
 }
