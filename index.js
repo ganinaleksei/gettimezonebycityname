@@ -25,7 +25,7 @@ module.exports = function(config){
 				).json;
 				return googleResp.timeZoneId;
 			} catch (err) {
-                throw new Error(err);
+				throw new Error(err);
 			}
 		}
 	};
